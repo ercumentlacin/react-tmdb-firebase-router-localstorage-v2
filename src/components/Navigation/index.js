@@ -10,10 +10,10 @@ const Navigation = () => {
       <nav className="nav">
         <div className="nav__brand">
           <Link to="/">E-MovieDB</Link>
-          <ul>
-              <NavItem url={"/"} name={"Home"} icon={"fas fa-home"} />
-          </ul>
         </div>
+        <ul>
+          <NavItem url={"/"} name={"Home"} icon={"fas fa-home"} />
+        </ul>
       </nav>
     </Styles.Navigation>
   );

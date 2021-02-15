@@ -5,6 +5,7 @@
 - Styled Components
 - React Bootstrap
 - React Router Dom
+- Fontawesome
 
 ## Progress
 - firebase added
@@ -13,3 +14,5 @@
 - React Bootstrap added
 - Header Component created
 - React Router Dom added
+- Fontawesome added
+- NavItem Component Created

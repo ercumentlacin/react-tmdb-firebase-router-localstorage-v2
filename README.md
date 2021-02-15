@@ -2,3 +2,5 @@
 
 ## Progress
 - firebase added
+- styled component added
+- layout added

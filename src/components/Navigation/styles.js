@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-const App = styled.div`
+const Navigation = styled.div`
     
 `;
 
 export default {
-    App,
+    Navigation,
   };

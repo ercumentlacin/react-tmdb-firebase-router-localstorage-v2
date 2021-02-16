@@ -16,3 +16,4 @@
 - React Router Dom added
 - Fontawesome added
 - NavItem Component Created
+- SearchBox Component Created

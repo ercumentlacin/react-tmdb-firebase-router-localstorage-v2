@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NavItem from "../NavItem";
+import SearchBox from "../SearchBox";
 import Styles from "./styles";
 // Components
 
@@ -13,7 +14,10 @@ const Navigation = () => {
         </div>
         <ul>
           <NavItem url={"/"} name={"Home"} icon={"fas fa-home"} />
+          <NavItem url={"/popular"} name={"Popular"} icon={"fas fa-chart-line"} />
+          <SearchBox name={"search"} icon={"fas fa-search"} />
         </ul>
+          <div class="border-top my-3 w-75 mx-auto bg-secondary"></div>
       </nav>
     </Styles.Navigation>
   );

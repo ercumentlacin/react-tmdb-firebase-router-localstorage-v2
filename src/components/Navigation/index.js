@@ -33,7 +33,7 @@ const Navigation = () => {
             orderCount={0}
           />
         </ul>
-        <div class="border-top my-3 w-75 mx-auto bg-secondary"></div>
+        <div className="border-top my-3 w-75 mx-auto bg-secondary"></div>
       </nav>
     </Styles.Navigation>
   );

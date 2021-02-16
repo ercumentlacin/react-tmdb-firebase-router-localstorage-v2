@@ -1,7 +1,8 @@
 import React from "react";
+import { StyledPopular } from "./styles";
 
 const Popular = () => {
-  return <div>Popular</div>;
+  return <StyledPopular>Popular</StyledPopular>;
 };
 
 export default Popular;

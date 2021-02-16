@@ -25,3 +25,5 @@ _Tech Stack_
 - SearchBox Component Created
 - Orders Component Created
 - Home and Popular Pages Created
+- Card and PageHeading Component Created
+- Button Component Created

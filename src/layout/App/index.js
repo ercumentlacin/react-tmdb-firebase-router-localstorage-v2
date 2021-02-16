@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Components
 import Navigation from "../../components/Navigation";
 import Home from "../../pages/Home/index";
-import Popular from "../../pages/Popular/";
+import Orders from "../../pages/Orders";
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         <Navigation />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/popular" component={Popular} />
+          <Route path="/orders" component={Orders} />
         </Switch>
       </Router>
     </Styles.App>

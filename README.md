@@ -27,3 +27,4 @@ _Tech Stack_
 - Home and Popular Pages Created
 - Card and PageHeading Component Created
 - Button Component Created
+- Orders Page Created

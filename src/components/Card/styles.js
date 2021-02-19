@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-// ${props => props.primary}
-
 export const StyledCard = styled.div`
   display: flex;
   flex-direction: column;

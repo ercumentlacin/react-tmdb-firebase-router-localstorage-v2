@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useStateValue } from "../../contexts/StateProvider";
 import NavItem from "../NavItem";
 import Orders from "../Orders";
 import SearchBox from "../SearchBox";
@@ -7,6 +8,8 @@ import Styles from "./styles";
 // Components
 
 const Navigation = () => {
+  const [{ basket }, dispatch] = useStateValue();
+
   return (
     <Styles.Navigation>
       <nav className="nav">
@@ -30,7 +33,7 @@ const Navigation = () => {
             url={"/orders"}
             name={"Orders"}
             icon={"fas fa-shopping-basket"}
-            orderCount={0}
+            orderCount={basket?.length}
           />
         </ul>
         <div className="border-top my-3 w-75 mx-auto bg-secondary"></div>

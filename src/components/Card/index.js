@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useStateValue } from "../../contexts/StateProvider";
 import Button from "../Button";
 import { StyledCard } from "./styles";
 
 const Card = ({ movie }) => {
+  const [{ basket }, dispatch] = useStateValue();
+  console.log(basket);
   if (!movie) {
     const backdrop_path = "/fQq1FWp1rC89xDrRMuyFJdFUdMd.jpg";
     const title = "test";
@@ -17,7 +20,7 @@ const Card = ({ movie }) => {
           </span>
           <span className="card__hover">{title}</span>
         </Link>
-        <Button />
+        <Button onClick={addToBasket} />
       </StyledCard>
     );
   }
@@ -28,7 +31,21 @@ const Card = ({ movie }) => {
     title,
     vote_average,
     vote_count,
+    id,
   } = movie;
+
+  const addToBasket = () => {
+    alert("ürün sepete eklendi");
+    dispatch({
+      type: "ADD_TO_BASKET",
+      item: {
+        id,
+        title,
+        backdrop_path,
+        price: vote_average * 10,
+      },
+    });
+  };
   return (
     <StyledCard title={title} backdrop_path={backdrop_path}>
       <Link className="card__main" to={"/product"}>
@@ -38,7 +55,7 @@ const Card = ({ movie }) => {
         </span>
         <span className="card__hover">{title}</span>
       </Link>
-      <Button />
+      <Button addToBasket={addToBasket} />
     </StyledCard>
   );
 };

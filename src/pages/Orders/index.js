@@ -34,8 +34,9 @@ const Orders = () => {
       <PageHeading name={"Orders"} />
       <section className="order__item">
         <div className="d-flex flex-column">
-          {basket?.map((item) => (
+          {basket?.map((item, index) => (
             <OrderProduct
+              key={index}
               id={item.id}
               title={item.title}
               price={item.price}

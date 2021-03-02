@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Styles from "./styles";
 import "bootstrap/dist/css/bootstrap.min.css";
 // Components
-import Navigation from "../../components/Navigation";
-import Home from "../../pages/Home/index";
-import Orders from "../../pages/Orders";
+import Navigation from "../components/Navigation";
+import Home from "../pages/Home/index";
+import Orders from "../pages/Orders";
 
 const App = () => {
   return (

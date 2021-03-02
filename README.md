@@ -20,7 +20,7 @@ _Tech Stack_
 - Fontawesome added
 - NavItem Component Created
 
-**16.02.2021**
+### 16.02.2021
 
 - SearchBox Component Created
 - Orders Component Created
@@ -29,7 +29,7 @@ _Tech Stack_
 - Button Component Created
 - Orders Page Created
 
-**02.03.2021**
+### 02.03.2021
 
 - Subtotals Component Created
 - Reducer Created

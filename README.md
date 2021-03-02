@@ -1,6 +1,6 @@
 # React TMDB firebase Localstorage Ecommerce
 
-_Tech Stack_
+## Tech Stack
 
 - React
 - Firebase
@@ -34,3 +34,4 @@ _Tech Stack_
 - Subtotals Component Created
 - Reducer Created
 - Layout change index
+- Created Login Page

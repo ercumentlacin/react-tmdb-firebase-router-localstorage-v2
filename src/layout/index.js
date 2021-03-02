@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "../components/Navigation";
 import Home from "../pages/Home/index";
 import Orders from "../pages/Orders";
+import Login from "../pages/Login";
 
 const App = () => {
   return (
@@ -13,8 +14,9 @@ const App = () => {
       <Router>
         <Navigation />
         <Switch>
+          <Route exact path="/sign-in" component={Login} />
           <Route exact path="/" component={Home} />
-          <Route path="/orders" component={Orders} />
+          <Route exact path="/orders" component={Orders} />
         </Switch>
       </Router>
     </Styles.App>

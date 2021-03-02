@@ -28,7 +28,6 @@ const Orders = () => {
   // };
 
   const [{ basket }, dispatch] = useStateValue();
-  console.log(basket);
   return (
     <StyledOrders>
       <PageHeading name={"Orders"} />

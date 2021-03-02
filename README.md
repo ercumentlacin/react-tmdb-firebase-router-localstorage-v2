@@ -35,3 +35,4 @@
 - Reducer Created
 - Layout change index
 - Created Login Page
+- User Authentication Added

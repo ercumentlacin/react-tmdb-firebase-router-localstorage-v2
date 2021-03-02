@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useStateValue } from "../../contexts/StateProvider";
+import { auth } from "../../firebase/firebase";
 import NavItem from "../NavItem";
 import Orders from "../Orders";
 import SearchBox from "../SearchBox";
@@ -8,8 +9,15 @@ import Styles from "./styles";
 // Components
 
 const Navigation = () => {
-  const [{ basket }, dispatch] = useStateValue();
-
+  const [{ basket, user }, dispatch] = useStateValue();
+  const history = useHistory();
+  console.log(user);
+  const handleAuthentication = () => {
+    if (user) {
+      auth.signOut();
+      history.push("/");
+    }
+  };
   return (
     <Styles.Navigation>
       <nav className="nav">
@@ -24,11 +32,21 @@ const Navigation = () => {
             icon={"fas fa-chart-line"}
           />
           <SearchBox name={"search"} icon={"fas fa-search"} />
-          <NavItem
-            url={"/sign-in"}
-            name={"Sign in"}
-            icon={"fas fa-sign-in-alt"}
-          />
+          {console.log(user)}
+          {!user ? (
+            <NavItem
+              url={"/sign-in"}
+              name={"Sign in"}
+              icon={"fas fa-sign-in-alt"}
+            />
+          ) : (
+            <NavItem
+              url={"/sign-out"}
+              name={"Sign out"}
+              icon={"fas fa-sign-out-alt"}
+              handleAuthentication={handleAuthentication}
+            />
+          )}
           <Orders
             url={"/orders"}
             name={"Orders"}

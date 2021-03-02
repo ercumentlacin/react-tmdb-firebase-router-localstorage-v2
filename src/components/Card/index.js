@@ -6,7 +6,6 @@ import { StyledCard } from "./styles";
 
 const Card = ({ movie }) => {
   const [{ basket }, dispatch] = useStateValue();
-  console.log(basket);
   if (!movie) {
     const backdrop_path = "/fQq1FWp1rC89xDrRMuyFJdFUdMd.jpg";
     const title = "test";

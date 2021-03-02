@@ -16,7 +16,6 @@ const Home = () => {
         console.error("Error:", error);
       });
   }, []);
-  console.log(movies);
   return (
     <StyledHome>
       <PageHeading name={"Home"} />

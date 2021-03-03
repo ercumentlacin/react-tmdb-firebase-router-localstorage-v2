@@ -8,6 +8,7 @@
 - React Bootstrap
 - React Router Dom
 - Fontawesome
+- Stripe JS
 
 ## Progress
 

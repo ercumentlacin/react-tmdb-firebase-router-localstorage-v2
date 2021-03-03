@@ -36,3 +36,7 @@
 - Layout change index
 - Created Login Page
 - User Authentication Added
+
+### 03.03.2021
+
+- Firebase Deploy && [https://react-ecommerce-aae81.web.app/]

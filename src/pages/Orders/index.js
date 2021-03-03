@@ -27,11 +27,12 @@ const Orders = () => {
   //   vote_count: 702,
   // };
 
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
   return (
     <StyledOrders>
       <PageHeading name={"Orders"} />
       <section className="order__item">
+        <h3>Hello, {user?.email || "it's time to sign up and shop."}</h3>
         <div className="d-flex flex-column">
           {basket?.map((item, index) => (
             <OrderProduct

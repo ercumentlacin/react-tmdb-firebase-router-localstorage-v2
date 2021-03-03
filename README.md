@@ -48,3 +48,4 @@
 - Payment Page Created
 - Axios Added
 - Express & Cors added
+- Payment Processing Config with Strapi

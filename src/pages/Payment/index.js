@@ -14,32 +14,32 @@ const Payment = () => {
 
   const [succeeded, setSucceeded] = useState(false);
   const [processing, setProcessing] = useState("");
-
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
+  const [clientSecret, setClientSecret] = useState(true);
 
-  const [cilentSecret, setCilentSecret] = useState(true);
-
-  useEffectfect(() => {
-    const getCilentSecret = async () => {
+  useEffect(() => {
+    const getClientSecret = async () => {
       const response = await axios({
         method: "post",
         url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
       });
-      setCilentSecret(response.data.cilentSecret);
+      setClientSecret(response.data.clientSecret);
     };
-    getCilentSecret();
+    getClientSecret();
   }, [basket]);
 
   const stripe = useStripe();
   const elements = useElements();
+
+  console.log("secret", clientSecret);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setProcessing(true);
 
     const payload = await stripe
-      .confirmCardPayment(cilentSecret, {
+      .confirmCardPayment(clientSecret, {
         payment_method: {
           card: elements.getElement(CardElement),
         },
@@ -52,10 +52,12 @@ const Payment = () => {
         history.replace("/orders");
       });
   };
+
   const handleChange = (e) => {
     setDisabled(e.empty);
     setError(e.error ? e.error.message : "");
   };
+
   return (
     <StyledPayment className="payment">
       <div className="payment__container">

@@ -10,6 +10,9 @@
 - Fontawesome
 - Stripe JS
 - Axios
+- Node JS
+- Express
+- Cors
 
 ## Progress
 
@@ -44,3 +47,4 @@
 - Firebase Deploy && [https://react-ecommerce-aae81.web.app/]
 - Payment Page Created
 - Axios Added
+- Express & Cors added

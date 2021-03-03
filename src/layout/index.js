@@ -10,6 +10,10 @@ import Login from "../pages/Login";
 import { auth } from "../firebase/firebase";
 import { useStateValue } from "../contexts/StateProvider";
 import Payment from "../pages/Payment";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
+const promise = loadStripe(`${process.env.REACT_APP_STRAPI_API}`);
 
 const App = () => {
   const [{ user }, dispatch] = useStateValue();
@@ -38,7 +42,11 @@ const App = () => {
           <Route exact path="/sign-in" component={Login} />
           <Route exact path="/" component={Home} />
           <Route exact path="/orders" component={Orders} />
-          <Route exact path="/payment" component={Payment} />
+          <Route exact path="/payment">
+            <Elements stripe={promise}>
+              <Payment />
+            </Elements>
+          </Route>
         </Switch>
       </Router>
     </Styles.App>

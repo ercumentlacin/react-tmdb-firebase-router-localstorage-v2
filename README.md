@@ -40,3 +40,4 @@
 ### 03.03.2021
 
 - Firebase Deploy && [https://react-ecommerce-aae81.web.app/]
+- Payment Page Created

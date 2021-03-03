@@ -9,30 +9,14 @@ import { useStateValue } from "../../contexts/StateProvider";
 import OrderProduct from "../../components/OrderProduct";
 
 const Orders = () => {
-  // const movie = {
-  //   adult: false,
-  //   backdrop_path: "/fQq1FWp1rC89xDrRMuyFJdFUdMd.jpg",
-  //   genre_ids: [10749, 35],
-  //   id: 761053,
-  //   original_language: "en",
-  //   original_title: "Gabriel's Inferno Part III",
-  //   overview:
-  //     "The final part of the film adaption of the erotic romance novel Gabriel's Inferno written by an anonymous Canadian author under the pen name Sylvain Reynard.",
-  //   popularity: 32.599,
-  //   poster_path: "/fYtHxTxlhzD4QWfEbrC1rypysSD.jpg",
-  //   release_date: "2020-11-19",
-  //   title: "Gabriel's Inferno Part III",
-  //   video: false,
-  //   vote_average: 8.9,
-  //   vote_count: 702,
-  // };
-
   const [{ basket, user }, dispatch] = useStateValue();
   return (
     <StyledOrders>
       <PageHeading name={"Orders"} />
+      <h3 className="text-muted mb-4">
+        Hello, {user?.email || "it's time to sign up and shop."}
+      </h3>
       <section className="order__item">
-        <h3>Hello, {user?.email || "it's time to sign up and shop."}</h3>
         <div className="d-flex flex-column">
           {basket?.map((item, index) => (
             <OrderProduct

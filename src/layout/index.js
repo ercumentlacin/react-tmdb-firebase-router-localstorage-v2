@@ -9,6 +9,7 @@ import Orders from "../pages/Orders";
 import Login from "../pages/Login";
 import { auth } from "../firebase/firebase";
 import { useStateValue } from "../contexts/StateProvider";
+import Payment from "../pages/Payment";
 
 const App = () => {
   const [{ user }, dispatch] = useStateValue();
@@ -37,6 +38,7 @@ const App = () => {
           <Route exact path="/sign-in" component={Login} />
           <Route exact path="/" component={Home} />
           <Route exact path="/orders" component={Orders} />
+          <Route exact path="/payment" component={Payment} />
         </Switch>
       </Router>
     </Styles.App>

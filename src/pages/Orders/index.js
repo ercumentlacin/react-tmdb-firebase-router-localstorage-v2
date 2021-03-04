@@ -17,7 +17,7 @@ const Orders = () => {
         Hello, {user?.email || "it's time to sign up and shop."}
       </h3>
       <section className="order__item">
-        <div className="d-flex flex-column">
+        <div className="order__item__list">
           {basket?.map((item, index) => (
             <OrderProduct
               key={index}

@@ -42,4 +42,12 @@ export const StyledOrders = styled.section`
       background-color: #ffcf3d;
     }
   }
+
+  .order__item__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-row-gap: 2rem;
+    place-items: center;
+    width: 100%;
+  }
 `;

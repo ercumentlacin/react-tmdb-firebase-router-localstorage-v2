@@ -12,6 +12,7 @@ import { useStateValue } from "../contexts/StateProvider";
 import Payment from "../pages/Payment";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import OnOrders from "../pages/OnOrders";
 
 const promise = loadStripe(`${process.env.REACT_APP_STRAPI_API}`);
 
@@ -42,6 +43,7 @@ const App = () => {
           <Route exact path="/sign-in" component={Login} />
           <Route exact path="/" component={Home} />
           <Route exact path="/orders" component={Orders} />
+          <Route exact path="/on-orders" component={OnOrders} />
           <Route exact path="/payment">
             <Elements stripe={promise}>
               <Payment />

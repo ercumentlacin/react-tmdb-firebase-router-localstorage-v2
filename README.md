@@ -13,6 +13,7 @@
 - Node JS
 - Express
 - Cors
+- Moment
 
 ## Progress
 
@@ -49,3 +50,8 @@
 - Axios Added
 - Express & Cors added
 - Payment Processing Config with Strapi
+
+### 0.03.2021
+
+- Moment added
+- Orderss Component and OnOrders component added

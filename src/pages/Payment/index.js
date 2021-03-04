@@ -7,6 +7,7 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../../contexts/reducer";
 import axios from "../../axios";
+import firebase, { db } from "../../firebase/firebase";
 
 const Payment = () => {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -38,6 +39,12 @@ const Payment = () => {
     e.preventDefault();
     setProcessing(true);
 
+    // başaramadık
+    // const test = firebase.firestore().collection("notes").add({
+    //   title: "Working",
+    //   body: "This is to check the Integration is working",
+    // });
+
     const payload = await stripe
       .confirmCardPayment(clientSecret, {
         payment_method: {
@@ -45,11 +52,25 @@ const Payment = () => {
         },
       })
       .then(({ paymentIntent }) => {
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
+
         setSucceeded(true);
         setError(null);
         setProcessing(false);
 
-        history.replace("/orders");
+        dispatch({
+          type: "EMPTY_BASKET",
+        });
+
+        history.replace("/on-orders");
       });
   };
 

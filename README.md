@@ -51,7 +51,11 @@
 - Express & Cors added
 - Payment Processing Config with Strapi
 
-### 0.03.2021
+### 04.03.2021
 
 - Moment added
 - Orderss Component and OnOrders component added
+
+### 05.03.2021
+
+- Created Poster Page

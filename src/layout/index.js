@@ -13,6 +13,7 @@ import Payment from "../pages/Payment";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import OnOrders from "../pages/OnOrders";
+import Poster from "../pages/Poster";
 
 const promise = loadStripe(`${process.env.REACT_APP_STRAPI_API}`);
 
@@ -20,8 +21,6 @@ const App = () => {
   const [{ user }, dispatch] = useStateValue();
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
-      console.log(`THEN USER IS >>> ${authUser}`, authUser);
-
       if (authUser) {
         dispatch({
           type: "SET_USER",
@@ -44,6 +43,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/orders" component={Orders} />
           <Route exact path="/on-orders" component={OnOrders} />
+          <Route exact path="/poster/:poster" component={Poster} />
           <Route exact path="/payment">
             <Elements stripe={promise}>
               <Payment />

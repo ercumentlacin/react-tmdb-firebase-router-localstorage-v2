@@ -50,7 +50,7 @@ export const StyledCard = styled.div`
   }
   .card__main {
     background: ${(props) =>
-      `linear-gradient(rgb(0 0 0 / 0%),rgb(0 0 0 / 25%)),url(https://www.themoviedb.org/t/p/w220_and_h330_face${props.backdrop_path}) no-repeat top center`};
+      `linear-gradient(rgb(0 0 0 / 0%),rgb(0 0 0 / 25%)),url(https://www.themoviedb.org/t/p/w220_and_h330_face${props.poster_path}) no-repeat top center`};
     width: 220px;
     height: 330px;
     border-radius: 3px;

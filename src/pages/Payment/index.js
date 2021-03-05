@@ -33,17 +33,9 @@ const Payment = () => {
   const stripe = useStripe();
   const elements = useElements();
 
-  console.log("secret", clientSecret);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setProcessing(true);
-
-    // başaramadık
-    // const test = firebase.firestore().collection("notes").add({
-    //   title: "Working",
-    //   body: "This is to check the Integration is working",
-    // });
 
     const payload = await stripe
       .confirmCardPayment(clientSecret, {

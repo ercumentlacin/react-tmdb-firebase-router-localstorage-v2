@@ -11,7 +11,6 @@ import Styles from "./styles";
 const Navigation = () => {
   const [{ basket, user }, dispatch] = useStateValue();
   const history = useHistory();
-  console.log(user);
   const handleAuthentication = () => {
     if (user) {
       auth.signOut();
@@ -32,7 +31,6 @@ const Navigation = () => {
             icon={"fas fa-chart-line"}
           />
           <SearchBox name={"search"} icon={"fas fa-search"} />
-          {console.log(user)}
           {!user ? (
             <NavItem
               url={"/sign-in"}

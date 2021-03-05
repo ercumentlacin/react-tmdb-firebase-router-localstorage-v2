@@ -59,4 +59,5 @@
 ### 05.03.2021
 
 - Created Poster Page
-- Popular Page
+- Created Popular Page
+- Created Search Results Page

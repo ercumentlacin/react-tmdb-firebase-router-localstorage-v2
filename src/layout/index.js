@@ -15,6 +15,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import OnOrders from "../pages/OnOrders";
 import Poster from "../pages/Poster";
 import Popular from "../pages/Popular";
+import Search from "../pages/Search";
 
 const promise = loadStripe(`${process.env.REACT_APP_STRAPI_API}`);
 
@@ -46,6 +47,7 @@ const App = () => {
           <Route exact path="/orders" component={Orders} />
           <Route exact path="/on-orders" component={OnOrders} />
           <Route exact path="/poster/:poster" component={Poster} />
+          <Route exact path="/search/:search" component={Search} />
           <Route exact path="/payment">
             <Elements stripe={promise}>
               <Payment />

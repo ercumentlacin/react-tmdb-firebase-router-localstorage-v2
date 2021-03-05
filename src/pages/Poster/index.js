@@ -67,10 +67,10 @@ const Poster = (props) => {
     return (
       <StyledPoster>
         <Breadcrumb>
-          <li class="breadcrumb-item " aria-current="page">
+          <li className="breadcrumb-item " aria-current="page">
             <Link to="/">Home</Link>
           </li>
-          <li class="breadcrumb-item " aria-current="page">
+          <li className="breadcrumb-item " aria-current="page">
             <span onClick={history.goBack}>Önceki Sayfa</span>
           </li>
           <Breadcrumb.Item active>{title}</Breadcrumb.Item>
@@ -128,11 +128,7 @@ const Poster = (props) => {
       </StyledPoster>
     );
   } else {
-    return (
-      <Spinner animation="border" role="status">
-        <span className="sr-only">Loading...</span>
-      </Spinner>
-    );
+    return <Spinner animation="border" variant="light" />;
   }
 };
 
